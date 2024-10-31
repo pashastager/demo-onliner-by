@@ -37,13 +37,15 @@ public class OnlinerLoginTest {
     }
 
     @Test
-    public void errorWitoutLoginAndPassword() {
+    public void errorLoginAndPassword() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.onliner.by");
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         OnlinerLoginPageMethods onlinerLoginPageMethods = new OnlinerLoginPageMethods(webDriver);
 
         onlinerLoginPageMethods.clickButton(OPEN_LOGIN_PAGE_BUTTON_XPATH);
+        onlinerLoginPageMethods.sendKeysInput(INPUT_LOGIN_XPATH, "1223");
+        onlinerLoginPageMethods.sendKeysInput(INPUT_PASSWORD_XPATH, "1223");
         onlinerLoginPageMethods.clickButton(LOGIN_BUTTON_XPATH);
         Assertions.assertEquals(onlinerLoginPageMethods.getResultErrorText(LOGIN_AND_PASSWORD_ERROR_XPATH), LOGIN_AND_PASSWORD_ERROR);
     }
