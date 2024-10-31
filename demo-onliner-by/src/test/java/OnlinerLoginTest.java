@@ -10,6 +10,7 @@ import static Helpers.OnlinerLoginPageMessages.*;
 import static Helpers.OnlinerLoginPageXpath.*;
 
 public class OnlinerLoginTest {
+
     @Test
     public void errorWitoutLogin() {
         WebDriver webDriver = new ChromeDriver();
