@@ -1,5 +1,8 @@
+package ui;
+
 import Helpers.OnlinerLoginPageMethods;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +15,7 @@ import static Helpers.OnlinerLoginPageXpath.*;
 public class OnlinerLoginTest {
 
     @Test
+    @DisplayName("Пустой логин")
     public void errorWitoutLogin() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.onliner.by");
@@ -25,6 +29,7 @@ public class OnlinerLoginTest {
     }
 
     @Test
+    @DisplayName("Пустой пароль")
     public void errorWitoutPassword() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.onliner.by");
@@ -38,6 +43,7 @@ public class OnlinerLoginTest {
     }
 
     @Test
+    @DisplayName("Некорректный логин и пароль")
     public void errorLoginAndPassword() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.onliner.by");
